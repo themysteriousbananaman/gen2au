@@ -51,11 +51,11 @@
 <body>
 
     <div class="container">
-        <h1 id="status">Quite Happy</h1>
+        <h1 id="status">Quite Gay</h1>
         
         <div class="meter-container">
             <input type="range" min="1" max="100" value="50" id="gayMeter">
-            <span class="label">Gay Meter (Happiness Scale)</span>
+            <span class="label">Homo Meter</span>
         </div>
     </div>
 
@@ -66,16 +66,16 @@
         slider.oninput = function() {
             const val = this.value;
             if (val < 25) {
-                statusText.innerText = "Peaceful";
+                statusText.innerText = "kinda gay";
                 statusText.style.color = "#81ecec";
             } else if (val < 50) {
-                statusText.innerText = "Cheerful";
+                statusText.innerText = "gayyy";
                 statusText.style.color = "#55efc4";
             } else if (val < 75) {
-                statusText.innerText = "Joyful";
+                statusText.innerText = "Very gay";
                 statusText.style.color = "#ffeaa7";
             } else {
-                statusText.innerText = "Radiantly Gay!";
+                statusText.innerText = "Extremely Gay!";
                 statusText.style.color = "#fab1a0";
             }
         };
