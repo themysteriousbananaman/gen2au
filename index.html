@@ -3,25 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arvin is gay</title>
+    <title>The Happiness Meter</title>
     <style>
         body {
             margin: 0;
             display: flex;
-            justify-content: center; /* Centers horizontally */
-            align-items: center;     /* Centers vertically */
-            height: 100vh;           /* Full screen height */
-            background-color: #ffffff;
-            font-family: sans-serif;
+            flex-direction: column; /* Stack text and meter */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f4f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        h1 {
-            font-size: 3rem;
-            color: #333;
+
+        .container {
             text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #2d3436;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* The Meter Styling */
+        .meter-container {
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        input[type=range] {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #636e72;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            display: block;
         }
     </style>
 </head>
 <body>
-    <h1>Arvin is gay</h1>
+
+    <div class="container">
+        <h1 id="status">Quite Happy</h1>
+        
+        <div class="meter-container">
+            <input type="range" min="1" max="100" value="50" id="gayMeter">
+            <span class="label">Gay Meter (Happiness Scale)</span>
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('gayMeter');
+        const statusText = document.getElementById('status');
+
+        slider.oninput = function() {
+            const val = this.value;
+            if (val < 25) {
+                statusText.innerText = "Peaceful";
+                statusText.style.color = "#81ecec";
+            } else if (val < 50) {
+                statusText.innerText = "Cheerful";
+                statusText.style.color = "#55efc4";
+            } else if (val < 75) {
+                statusText.innerText = "Joyful";
+                statusText.style.color = "#ffeaa7";
+            } else {
+                statusText.innerText = "Radiantly Gay!";
+                statusText.style.color = "#fab1a0";
+            }
+        };
+    </script>
 </body>
 </html>
